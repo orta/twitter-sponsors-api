@@ -38,6 +38,7 @@ const httpTrigger = async function (req, res): Promise<void> {
       });
 
       const result = await twitterAPI.post("/friendships/create", { screen_name: twitter });
+      console.log(`Added ${twitter}`)
       res.status(200).json({ text: "Added", user: result });
     }
   }
