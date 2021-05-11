@@ -21,7 +21,7 @@ if (!twitterConsumerKey || !twitterConsumerSecret || !twitterTokenKey || !twitte
   throw new Error("Twitter not set up");
 
 const httpTrigger = async function (req, res): Promise<void> {
-  const webhook = req.body as any // Webhooks.WebhookPayloadSponsorship;
+  const webhook = req.body
   const action = webhook.action as SponsorActions;
 
   if (action === "created") {
